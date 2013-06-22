@@ -8,7 +8,7 @@ class ProposalsController < ApplicationController
   def create
     @proposal = current_user.proposals.build params[:proposal]
     if @proposal.save
-      redirect_to(proposal_path(@proposal))
+      redirect_to(proposals_path(@proposal))
     else
       render :new
     end
