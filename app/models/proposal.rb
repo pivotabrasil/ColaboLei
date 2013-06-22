@@ -1,6 +1,6 @@
 class Proposal < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :body, :title, :user_id, :forked_from_id, :slug, :category
+  attr_accessible :body, :title, :user_id, :forked_from_id, :slug, :category, :forked_from
 
   paginates_per 20
 
