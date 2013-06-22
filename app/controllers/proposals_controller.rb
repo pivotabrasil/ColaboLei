@@ -22,10 +22,10 @@ class ProposalsController < ApplicationController
   end
 
   def like
-    proposal = Proposal.find params[:id]
+    proposal = Proposal.find params[:slug]
     proposal.increment!(:likes_count)
     
-    render :nothing => true
+    redirect_to :back
   end
   
   def destroy
