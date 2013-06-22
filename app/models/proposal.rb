@@ -1,6 +1,6 @@
 class Proposal < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :body, :title, :user_id, :forked_from_id, :slug
+  attr_accessible :body, :title, :user_id, :forked_from_id, :slug, :category
 
   paginates_per 20
 
@@ -12,9 +12,5 @@ class Proposal < ActiveRecord::Base
   belongs_to :forked_from, class_name: 'Proposal'
 
   has_many :forked_to, class_name: 'Proposal'
-  
-  def should_generate_new_friendly_id?
-    slug.blank?
-  end
 
 end

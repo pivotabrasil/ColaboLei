@@ -34,6 +34,7 @@ ColaboLei::Application.routes.draw do
   get    'proposta/nova'         => 'proposals#new', as: :new_proposal
   post   'proposta/criar'        => 'proposals#create', as: :create_proposal
   get    'proposta/:id/melhorar' => 'proposals#fork', as: :fork_proposal
+  post   'proposta/:id/curtir'   => 'proposals#like', as: :like_proposal
   delete 'proposta/:id'          => 'proposals#destroy', as: :destroy_proposal
 
   delete 'proposta/:proposal_id/comentario/:id' => 'proposal_comments#destroy', as: :destroy_proposal_comment
