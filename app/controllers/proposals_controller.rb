@@ -22,7 +22,7 @@ class ProposalsController < ApplicationController
   end
 
   def like
-    proposal = Proposal.find params[:slug]
+    proposal = Proposal.find params[:id]
     proposal.increment!(:likes_count)
     
     redirect_to :back
