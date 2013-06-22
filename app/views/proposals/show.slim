@@ -6,5 +6,13 @@ h3 = "#{@proposal.proposal_comments.group(:user_id).count.keys.count + 1} partic
 h3 = "#{@proposal.body[0..255]}..."
 h3 = "#{@proposal.views_count} visualizações"
 h3 = "#{@proposal.proposal_comments.count} comentários"
+ul
+  - @proposal.proposal_comments.each do |proposal_comment|
+    li
+      h4 = proposal_comment.body
+      h4 = proposal_comment.user.name
+= form_tag(proposal_comment_path(@proposal)) do
+  = text_area_tag("body")
+  = submit_tag "Comentar"
 h3 = "#{@proposal.likes_count} curtidas"
 = link_to "Curtir", like_proposal_path(@proposal)

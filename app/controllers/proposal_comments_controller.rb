@@ -11,7 +11,7 @@ class ProposalCommentsController < ApplicationController
   
   def create
     proposal = Proposal.find params[:proposal_id]
-    comment = proposal.comments.create(user: current_user, body: params[:proposal_comments][:body])
+    comment = proposal.proposal_comments.create(user_id: current_user.id, body: params[:body])
     
     if comment.save
       redirect_to(proposal_path(proposal))
