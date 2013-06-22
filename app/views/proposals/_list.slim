@@ -10,4 +10,4 @@ ul
       h3 = "#{proposal.views_count} visualizações"
       h3 = "#{proposal.proposal_comments.count} comentários"
       h3 = "#{proposal.likes_count} curtidas"
-      = link_to "Curtir", like_proposal_path(proposal)
+      = link_to "Curtir", like_proposal_path(proposal.id)
