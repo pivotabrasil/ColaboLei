@@ -39,7 +39,7 @@ class ProposalsController < ApplicationController
   end
 
   def show
-    @proposal = Proposal.find params[:slug]
+    @proposal = Proposal.find(params[:slug])
     @proposal.increment!(:views_count)
   end
 end
