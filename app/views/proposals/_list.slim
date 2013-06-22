@@ -1,0 +1,11 @@
+ul
+  - @proposals.each do |proposal|
+    li
+      h2 = proposal.title
+      time = l proposal.created_at, format: :short
+      h3 = "#{proposal.proposal_comments.group(:user_id).count.keys.count + 1} participantes"
+      h3 = "#{proposal.body[0..255]}..."
+      h3 = proposal.views_count
+      h3 = proposal.proposal_comments.count
+
+

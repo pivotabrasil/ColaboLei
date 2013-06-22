@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622125503) do
+ActiveRecord::Schema.define(:version => 20130622143800) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -117,9 +117,11 @@ ActiveRecord::Schema.define(:version => 20130622125503) do
     t.text     "body"
     t.integer  "user_id"
     t.string   "title"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "forked_from_id"
+    t.integer  "views_count",    :default => 1
+    t.string   "slug"
   end
 
   add_index "proposals", ["user_id"], :name => "index_proposals_on_user_id"

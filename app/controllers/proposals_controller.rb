@@ -33,5 +33,6 @@ class ProposalsController < ApplicationController
 
   def show
     @proposal = Proposal.find params[:id]
+    @proposal.increment(:view_count)
   end
 end
