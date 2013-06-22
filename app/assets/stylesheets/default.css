@@ -129,6 +129,8 @@ div#main
 	div#cols
 	{
 		text-align: left;
+		margin-top: 12px;
+		padding-bottom:40px;
 	}
 
 		/* ssingleCollum */
@@ -154,7 +156,7 @@ div#main
 				width:500px;
 			}
 
-				/* VIEW: home */
+				/* VIEW: index */
 				#homeImg
 				{
 					width:100%;
@@ -177,7 +179,77 @@ div#main
 				{
 					display: none;
 				}
-				/* VIEW: END home */
+				/* VIEW: END index */
+
+				/* VIEW: home */
+
+				#novaProposta
+				{
+					position: absolute;
+					bottom: 0;
+					right: 0;
+				}
+
+				/* VIEW: END home; */
+
+				
+
+				/* VIEW: proposta */
+
+				.proposta
+				{
+					font-size:16px;
+					width:800px !important;
+					margin:60px auto 0 auto;
+					color:rgba(0, 0, 0, 0.62);
+					text-align:center;
+				}
+
+				.proposta h1
+				{
+					font-size:34px;
+				}
+
+				.proposta p
+				{
+					margin-top:10px;
+					line-height: 1.5em;
+					text-align: justify;
+					cursor: pointer;
+					padding: 10px 100px;
+					border-radius: 4px;
+				}
+
+				.proposta p:hover
+				{
+					background:rgba(0,0,0,0.15);
+				}
+
+				a.comentario
+				{
+					position: absolute;
+					top:10px;
+					right: 10px;
+				}
+				a.comentario img 
+				{
+					width:20px;
+					height: 14px;
+				}
+				a.comentario:hover
+				{
+
+				}
+
+				#alterarProposta
+				{
+					position: absolute;
+					right:130px;
+					bottom:0px;
+				}
+				/* VIEW: END proposta; */
+
+				
 
 			div.rightCollum
 			{
