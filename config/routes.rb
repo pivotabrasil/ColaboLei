@@ -21,14 +21,23 @@ ColaboLei::Application.routes.draw do
   get '/usuarios/minha-conta' => 'settings#edit', as: :edit_user
   put '/usuarios' => 'settings#update', as: :update_user
   
-  root  to:                     'home#index'
-  get   'contato'            => 'contacts#index', as: :contacts
-  match 'contato/enviar'     => 'contacts#new',   as: :new_contact
+  root  to:                      'home#index'
+  get   'contato'             => 'contacts#index', as: :contacts
+  match 'contato/enviar'      => 'contacts#new',   as: :new_contact
 
-  put   'mercury_content'    => 'mercury_contents#update'
-  get   'frontend/:template' => 'frontend#show'
-  get   'frontend'           => 'frontend#index'
+  put   'mercury_content'     => 'mercury_contents#update'
+  get   'frontend/:template'  => 'frontend#show'
+  get   'frontend'            => 'frontend#index'
+
+  get    '/:slug/:id'             => 'proposals#show', as: :proposal
+  get    '/proposta/nova'         => 'proposals#new', as: :new_proposal
+  post   '/proposta/criar'        => 'proposals#create', as: :create_proposal
+  get    '/melhorar/proposta/:id' => 'proposals#fork', as: :fork_proposal
+  delete '/proposta/:id'          => 'proposals#destroy', as: :destroy_proposal
+
+  delete '/comentario/:proposal_id' => 'comments#destroy', as: :destroy_comment
+  post   '/comentar/:proposal_id'   => 'comments#create', as: :comment
 
   ActiveAdmin.routes(self)
-  get ':slug'                => 'pages#show',     as: :page
+  get ':slug'                 => 'pages#show',     as: :page
 end
