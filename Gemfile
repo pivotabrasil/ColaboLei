@@ -17,6 +17,7 @@ gem 'rufus-scheduler'
 gem 'draper'
 gem 'resque'
 gem 'redis'
+gem 'cancan'
 
 # frontend gems
 gem 'ckeditor'
