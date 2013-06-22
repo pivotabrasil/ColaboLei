@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130622123349) do
+ActiveRecord::Schema.define(:version => 20130622125503) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -62,17 +62,6 @@ ActiveRecord::Schema.define(:version => 20130622123349) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], :name => "idx_ckeditor_assetable"
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], :name => "idx_ckeditor_assetable_type"
 
-  create_table "comments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "proposal_id"
-    t.text     "body"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-  end
-
-  add_index "comments", ["proposal_id"], :name => "index_comments_on_proposal_id"
-  add_index "comments", ["user_id"], :name => "index_comments_on_user_id"
-
   create_table "contacts", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -112,6 +101,17 @@ ActiveRecord::Schema.define(:version => 20130622123349) do
   end
 
   add_index "pages", ["slug"], :name => "index_paginas_on_slug"
+
+  create_table "proposal_comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "proposal_id"
+    t.text     "body"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "proposal_comments", ["proposal_id"], :name => "index_comments_on_proposal_id"
+  add_index "proposal_comments", ["user_id"], :name => "index_comments_on_user_id"
 
   create_table "proposals", :force => true do |t|
     t.text     "body"

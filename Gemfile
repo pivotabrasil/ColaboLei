@@ -18,6 +18,7 @@ gem 'draper'
 gem 'resque'
 gem 'redis'
 gem 'cancan'
+gem 'kaminari'
 
 # frontend gems
 gem 'ckeditor'

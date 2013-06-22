@@ -2,6 +2,8 @@ class Proposal < ActiveRecord::Base
   belongs_to :user
   attr_accessible :body, :title
 
+  paginates_per 20
+
   has_many :proposal_comments
 
   extend FriendlyId

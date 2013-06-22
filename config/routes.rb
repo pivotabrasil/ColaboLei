@@ -36,8 +36,8 @@ ColaboLei::Application.routes.draw do
   get    'proposta/:id/melhorar' => 'proposals#fork', as: :fork_proposal
   delete 'proposta/:id'          => 'proposals#destroy', as: :destroy_proposal
 
-  delete 'comentario/:proposal_id' => 'comments#destroy', as: :destroy_comment
-  post   'comentar/:proposal_id'   => 'comments#create', as: :comment
+  delete 'proposta/:proposal_id/comentario/:id' => 'proposal_comments#destroy', as: :destroy_proposal_comment
+  post   'proposta/:proposal_id/comentario'   => 'proposal_comments#create', as: :proposal_comment
 
   get    ':slug'             => 'proposals#show', as: :proposal
 end

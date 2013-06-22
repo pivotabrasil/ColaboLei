@@ -8,16 +8,30 @@ class ProposalsController < ApplicationController
   def create
     @proposal = current_user.proposals.build params[:proposal]
     if @proposal.save
-      redirect_to(proposal_path(slug: @proposal.slug, id: @proposal.id))
+      redirect_to(proposal_path(@proposal))
     else
       render :new
     end
   end
   
   def fork
-    forked_proposta = Proposal.find params[:id]
+    forked_proposal = Proposal.find params[:id]
+    @proposal = current_user.proposals.build(body: forked_proposal.body, title: forked_proposal.title, forked_from: forked_proposal)
+
+    render :new
   end
   
-  def destroy; end
-  def show; end
+  def destroy
+    proposal = Proposal.find params[:id]
+    if can? :destroy, proposal
+      proposal.destroy
+      redirect_to root_path
+    else
+      head :unauthorized
+    end
+  end
+
+  def show
+    @proposal = Proposal.find params[:id]
+  end
 end

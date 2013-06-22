@@ -419,6 +419,7 @@ DEPENDENCIES
   jquery-migrate-rails
   jquery-rails
   jquery-ui-rails
+  kaminari
   kss-rails
   magic_encoding
   mercury-rails
