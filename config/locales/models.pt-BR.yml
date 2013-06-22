@@ -6,7 +6,17 @@ pt-BR:
       admin_user: Administrador(es)
       content_block: Bloco(s) de Conteúdo
       contact: Contato(s)
+      proposal: Proposta(s)
+      proposal_comment: Comentário(s) de Proposta
     attributes:
+      proposal:
+        body: Texto
+        title: Título
+        user: Usuário
+      proposal_comment:
+        body: Texto
+        user: Usuário
+        proposal: Proposta
       contact:
         name: Nome
         email: Email

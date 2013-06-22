@@ -29,15 +29,18 @@ ColaboLei::Application.routes.draw do
   get   'frontend/:template'  => 'frontend#show'
   get   'frontend'            => 'frontend#index'
 
-  get    '/:slug/:id'             => 'proposals#show', as: :proposal
-  get    '/proposta/nova'         => 'proposals#new', as: :new_proposal
-  post   '/proposta/criar'        => 'proposals#create', as: :create_proposal
-  get    '/melhorar/proposta/:id' => 'proposals#fork', as: :fork_proposal
-  delete '/proposta/:id'          => 'proposals#destroy', as: :destroy_proposal
-
-  delete '/comentario/:proposal_id' => 'comments#destroy', as: :destroy_comment
-  post   '/comentar/:proposal_id'   => 'comments#create', as: :comment
-
   ActiveAdmin.routes(self)
+  
+
+  get    'proposta/nova'         => 'proposals#new', as: :new_proposal
+  post   'proposta/criar'        => 'proposals#create', as: :create_proposal
+  get    'melhorar/proposta/:id' => 'proposals#fork', as: :fork_proposal
+  delete 'proposta/:id'          => 'proposals#destroy', as: :destroy_proposal
+
+  delete 'comentario/:proposal_id' => 'comments#destroy', as: :destroy_comment
+  post   'comentar/:proposal_id'   => 'comments#create', as: :comment
+
+  get    ':slug/:id'             => 'proposals#show', as: :proposal
+
   get ':slug'                 => 'pages#show',     as: :page
 end
