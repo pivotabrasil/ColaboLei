@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RailsHerokuBootstrap::Application.load_tasks
+ColaboLei::Application.load_tasks
