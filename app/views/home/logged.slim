@@ -1,1 +1,7 @@
-h1 logged
+h1
+  ' Olá, 
+  = current_user.name
+
+= link_to 'Adicione seu projeto', new_proposal_path
+
+= render 'proposals/list'

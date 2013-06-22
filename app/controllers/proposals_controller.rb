@@ -20,6 +20,13 @@ class ProposalsController < ApplicationController
 
     render :new
   end
+
+  def like
+    proposal = Proposal.find params[:id]
+    proposal.increment!(:likes_count)
+    
+    redirect_to :back
+  end
   
   def destroy
     proposal = Proposal.find params[:id]
@@ -32,6 +39,7 @@ class ProposalsController < ApplicationController
   end
 
   def show
-    @proposal = Proposal.find params[:id]
+    @proposal = Proposal.find params[:slug]
+    @proposal.increment!(:views_count)
   end
 end

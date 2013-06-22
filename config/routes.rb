@@ -32,12 +32,14 @@ ColaboLei::Application.routes.draw do
   ActiveAdmin.routes(self)
 
   get    'proposta/nova'         => 'proposals#new', as: :new_proposal
-  post   'proposta/criar'        => 'proposals#create', as: :create_proposal
+  post   'proposta/criar'        => 'proposals#create', as: :proposals
   get    'proposta/:id/melhorar' => 'proposals#fork', as: :fork_proposal
+  get    'proposta/:id/curtir'   => 'proposals#like', as: :like_proposal
   delete 'proposta/:id'          => 'proposals#destroy', as: :destroy_proposal
 
   delete 'proposta/:proposal_id/comentario/:id' => 'proposal_comments#destroy', as: :destroy_proposal_comment
   post   'proposta/:proposal_id/comentario'   => 'proposal_comments#create', as: :proposal_comment
 
   get    ':slug'             => 'proposals#show', as: :proposal
+
 end
