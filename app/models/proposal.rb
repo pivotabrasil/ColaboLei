@@ -13,4 +13,16 @@ class Proposal < ActiveRecord::Base
 
   has_many :forked_to, class_name: 'Proposal'
 
+  def commenters
+    proposal_comments.includes(:user).collect{|comment| comment.user}.uniq
+  end
+
+  def participants
+    (commenters + [user]).uniq
+  end
+
+  def participants_count
+    participants.size
+  end
+
 end

@@ -5,7 +5,7 @@ ul
       = link_to proposal do
         h2 = proposal.title
       time = l proposal.created_at, format: :short
-      h3 = "#{proposal.proposal_comments.group(:user_id).count.keys.count + 1} participantes"
+      h3 = "#{proposal.participants_count } participantes"
       h3 = "#{proposal.body[0..255]}..."
       h3 = "#{proposal.views_count} visualizações"
       h3 = "#{proposal.proposal_comments.count} comentários"
