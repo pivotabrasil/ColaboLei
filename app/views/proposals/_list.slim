@@ -11,3 +11,5 @@ ul
       h3 = "#{proposal.proposal_comments.count} comentários"
       h3 = "#{proposal.likes_count} curtidas"
       = link_to "Curtir", like_proposal_path(proposal.id)
+      <br/>
+      = link_to "Curtir (Ajax/API/JS)", like_proposal_path(proposal.id), remote: true

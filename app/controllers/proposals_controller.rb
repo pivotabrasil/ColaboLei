@@ -25,7 +25,10 @@ class ProposalsController < ApplicationController
     proposal = Proposal.find params[:id]
     proposal.increment!(:likes_count)
     
-    redirect_to :back
+    respond_to do |format|
+      format.html { redirect_to :back }
+      format.js   { render nothing: true }
+    end
   end
   
   def destroy
