@@ -24,9 +24,6 @@ class User < ActiveRecord::Base
   validates :name, presence: true
   
   mount_uploader :avatar, AvatarUploader
-
-  has_many :proposals
-  has_many :proposal_comments
   
   def self.find_for_facebook_oauth(access_token, signed_in_resource = nil)
     data = access_token.info

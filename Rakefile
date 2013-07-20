@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-ColaboLei::Application.load_tasks
+Colabolei::Application.load_tasks

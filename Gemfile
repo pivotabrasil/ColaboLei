@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '1.9.2'
+ruby '2.0.0'
 
 gem 'rails',                  '~> 3.2.13'
 gem 'pg'
@@ -17,8 +17,6 @@ gem 'rufus-scheduler'
 gem 'draper'
 gem 'resque'
 gem 'redis'
-gem 'cancan'
-gem 'kaminari'
 
 # frontend gems
 gem 'ckeditor'
@@ -47,7 +45,6 @@ group :assets do
   gem 'singularity-extras'
   gem 'breakpoint'
   gem 'oily_png'
-  gem 'sassy-buttons'
   gem 'color-schemer'
   gem 'toolkit'
 end
@@ -77,4 +74,8 @@ group :development do
   gem 'bullet'
   gem 'rack-mini-profiler'
   gem 'kss-rails'
+end
+
+group :production do
+  gem 'heroku-deflater'
 end

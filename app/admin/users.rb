@@ -1,10 +1,10 @@
-# -*- coding: utf-8 -*-
 ActiveAdmin.register User do
   menu parent: I18n.t('app.active_admin.administration'), priority: 3
 
   filter :name
   filter :email
   filter :current_sign_in_at
+  filter :sign_in_count
 
   index do
     column :id

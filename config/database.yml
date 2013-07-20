@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  database: colabo_lei_development
+  database: colabolei_development
   host: localhost
   user: postgres
   password:
@@ -10,7 +10,7 @@ development:
 
 test: &test
   adapter: postgresql
-  database: colabo_lei_test
+  database: colabolei_test
   host: localhost
   user: postgres
   password:
@@ -20,7 +20,7 @@ test: &test
 
 production:
   adapter: postgresql
-  database: colabo_lei_production
+  database: colabolei_production
   host: localhost
   user: postgres
   password:
